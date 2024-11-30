@@ -82,49 +82,78 @@ logger.error("Error messages for serious problems")
    - Move completed items to the "Completed" section with completion date
    - Use checkmarks [x] for completed items
 5. Follow the component-based structure with co-located logic
-6. Git Version Control: (https://github.com/T-ravis-H/lettahome)
-   - Create feature branches for new work
-   - Use branch naming convention: feature/[feature-name] or fix/[bug-name]
-   - Commit messages should be clear and descriptive
-   - Push changes regularly
-   - Create Pull Requests for review before merging to main
-   - Never commit directly to main branch
 
-## Git Workflow
-1. Starting new work:
+## Git & GitHub Workflow
+
+### Repository Setup
+- Main repository: https://github.com/T-ravis-H/lettahome
+- Store GitHub token as environment variable (GH_TOKEN)
+- Never commit the token or any sensitive data
+
+### Branch Management
+- Main branch: `main` (primary branch)
+- Feature branches: `feature/[feature-name]`
+- Bug fix branches: `fix/[bug-name]`
+- Never commit directly to main branch
+
+### Basic Workflow Commands
+1. Clone repository:
    ```bash
-   git checkout main
-   git pull
-   git checkout -b feature/[feature-name]
+   git clone https://github.com/T-ravis-H/lettahome.git
    ```
 
-2. Making changes:
+2. Configure git (one-time setup):
    ```bash
-   git add [files]
-   git commit -m "descriptive message"
-   git push origin feature/[feature-name]
+   git config --global user.name "Your Name"
+   git config --global user.email "your.email@example.com"
    ```
 
-3. Updating from main:
+3. Daily workflow:
    ```bash
-   git checkout main
-   git pull
-   git checkout feature/[feature-name]
-   git merge main
+   # Get latest changes
+   git pull origin main
+
+   # Create new branch
+   git checkout -b feature/your-feature
+
+   # Add changes
+   git add .
+
+   # Commit changes
+   git commit -m "Descriptive message about changes"
+
+   # Push changes
+   git push origin feature/your-feature
    ```
 
-## Component Structure Example
-```
-/components
-  /navbar
-    - NavBar.py (UI Component)
-    - navbar_logic.py (Component Logic)
-    - __init__.py
-```
+4. Merging changes:
+   - Create Pull Request on GitHub
+   - Review code
+   - Merge after approval
 
-## Version Control Practices
-- Meaningful commit messages
-- Regular commits with atomic changes
-- Keep feature branches up to date with main
+### Commit Message Guidelines
+- Use clear, descriptive messages
+- Start with a verb (Add, Update, Fix, Refactor)
+- Keep it concise but informative
+- Example: "Add navbar component with theme toggle"
+
+### Common Issues & Solutions
+1. Authentication issues:
+   - Ensure GH_TOKEN environment variable is set
+   - Use token in remote URL: 
+     ```bash
+     git remote set-url origin https://$GH_TOKEN@github.com/T-ravis-H/lettahome.git
+     ```
+
+2. Branch conflicts:
+   ```bash
+   git fetch origin
+   git rebase origin/main
+   ```
+
+3. Force push (use cautiously):
+   ```bash
+   git push -f origin branch-name
+   ```
 
 Note: This document will be updated as new decisions are made or practices are refined. 

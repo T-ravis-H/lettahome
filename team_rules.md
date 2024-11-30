@@ -76,8 +76,42 @@ logger.error("Error messages for serious problems")
 1. Always use the centralized logging system
 2. Keep components modular and independent
 3. Document any major architectural decisions
-4. Update `project_list.md` when priorities change
+4. Project List Management:
+   - Update `project_list.md` when priorities change
+   - Add new ideas to the backlog section
+   - Move completed items to the "Completed" section with completion date
+   - Use checkmarks [x] for completed items
 5. Follow the component-based structure with co-located logic
+6. Git Version Control:
+   - Create feature branches for new work
+   - Use branch naming convention: feature/[feature-name] or fix/[bug-name]
+   - Commit messages should be clear and descriptive
+   - Push changes regularly
+   - Create Pull Requests for review before merging to main
+   - Never commit directly to main branch
+
+## Git Workflow
+1. Starting new work:
+   ```bash
+   git checkout main
+   git pull
+   git checkout -b feature/[feature-name]
+   ```
+
+2. Making changes:
+   ```bash
+   git add [files]
+   git commit -m "descriptive message"
+   git push origin feature/[feature-name]
+   ```
+
+3. Updating from main:
+   ```bash
+   git checkout main
+   git pull
+   git checkout feature/[feature-name]
+   git merge main
+   ```
 
 ## Component Structure Example
 ```

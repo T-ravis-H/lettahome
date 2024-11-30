@@ -82,7 +82,7 @@ logger.error("Error messages for serious problems")
    - Move completed items to the "Completed" section with completion date
    - Use checkmarks [x] for completed items
 5. Follow the component-based structure with co-located logic
-6. Git Version Control:
+6. Git Version Control: (https://github.com/T-ravis-H/lettahome)
    - Create feature branches for new work
    - Use branch naming convention: feature/[feature-name] or fix/[bug-name]
    - Commit messages should be clear and descriptive

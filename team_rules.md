@@ -91,10 +91,10 @@ logger.error("Error messages for serious problems")
 - Never commit the token or any sensitive data
 
 ### Branch Management
-- Main branch: `main` (primary branch)
+- Primary branch: `master` (not using `main`)
 - Feature branches: `feature/[feature-name]`
 - Bug fix branches: `fix/[bug-name]`
-- Never commit directly to main branch
+- Never commit directly to master branch
 
 ### Basic Workflow Commands
 1. Clone repository:
@@ -111,7 +111,7 @@ logger.error("Error messages for serious problems")
 3. Daily workflow:
    ```bash
    # Get latest changes
-   git pull origin main
+   git pull origin master
 
    # Create new branch
    git checkout -b feature/your-feature
@@ -129,7 +129,7 @@ logger.error("Error messages for serious problems")
 4. Merging changes:
    - Create Pull Request on GitHub
    - Review code
-   - Merge after approval
+   - Merge after approval into master branch
 
 ### Commit Message Guidelines
 - Use clear, descriptive messages
